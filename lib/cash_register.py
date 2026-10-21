@@ -3,6 +3,7 @@
 
 class CashRegister:
     def __init__(self, discount=0):
+        self._discount = 0
         self.discount = discount
         self.total = 0
         self.items = []
@@ -14,7 +15,7 @@ class CashRegister:
 
     @discount.setter
     def discount(self, value):
-        if isinstance(value, int) and 0 <= value <= 100:
+        if type(value) is int and 0 <= value <= 100:
             self._discount = value
         else:
             print("Not valid discount")
